@@ -1,0 +1,538 @@
+ ************************************************************
+ 
+ 
+   ----------------------------------------------------------  
+   PHOENICS 2022 v1.0 - EARTH                                  
+   (C) Copyright 2022                                          
+   Concentration Heat and Momentum Limited                     
+   All rights reserved.                                        
+   Address:  Bakery House, 40 High Street                      
+   Wimbledon, London, SW19 5AU, England                        
+   tel:       +44 (0) 20-8947-7651                             
+   fax:       +44 (0) 20-8879-3497                             
+   e-mail:    phoenics@cham.co.uk                              
+   web:       www.cham.co.uk                                   
+   ----------------------------------------------------------  
+   Code expiry date is the end  : jul 2025                     
+   ----------------------------------------------------------  
+   Running with 64-bit Double Precision executable             
+   Working directory: C:\Users\marta\OneDrive - Politecnico di Milano\AAAUNI\MAGISTRALE\PRIMO ANNO\FLUID LABS\Lab_tests\CFD2\simulations\base
+ 
+ ************************************************************
+ 
+ Initial estimated storage requirement is                  10000000
+ 
+ PRPS is not stored
+ Material properties used for phase 1 are
+ density
+ laminar viscosity
+ turbulent viscosity
+ mixing length
+ >>>   End of property-related data   <<<
+ ************************************************************
+ 
+ Number of F-array locations available is                  10000000
+ Number used before BFC allowance is                        1667357
+ Number used after BFC allowance is                         1667357
+ ************************************************************
+ 
+  Standard k-e model constants
+ 
+ AK =0.41 EWAL =8.6
+ CMU =0.5478 CD =0.1643 CMUCD =0.090004
+ C1E =1.44 C2E =1.92
+ 
+ The foregoing constants may be changed
+ from the Q1 file by setting:
+ SPEDAT(KECONST,name of constant,R,value)
+ 
+ ************************************************************
+ biggest cell volume divided by average is     3.99079800000038       at:
+ ix = 1 iy = 21 iz = 895
+ xg =0.5 yg =0.0475 zg =2.981667
+ smallest cell volume divided by average is   6.560015200557720E-002  at:
+ ix = 1 iy = 1 iz = 377
+ xg =0.5 yg =1.397348E-03 zg =1.255
+ ratio of smallest to biggest is   1.643785328286997E-002
+ ************************************************************
+ 
+ -------- Recommended settings -------
+ CONWIZ=T activates settings based on
+ refrho =1. refvel =10. reflen =1. reftemp =50.
+ rlxdu1 =0.5 rlxdv1 =0.5 rlxdw1 =0.5
+ Maximum change of V1   per sweep=   100.000000000000     
+ Maximum change of W1   per sweep=   100.000000000000     
+ Maximum change of KE   per sweep=   1.00000000000000     
+ Maximum change of EP   per sweep=   1000.00000000000     
+ relaxation and min/max values left at
+ defaults may have been changed
+ 
+ ************************************************************
+ SParsol activated
+ ************************************************************
+  Group 1. Run Title and Number
+ ************************************************************
+ ************************************************************
+ 
+ TEXT(refined-21x1500                         )
+ 
+ ************************************************************
+ ************************************************************
+ 
+ IRUNN = 1 ;LIBREF = 0
+ ************************************************************
+  Group 2. Time dependence
+ STEADY = T
+ ************************************************************
+  Group 3. X-Direction Grid Spacing
+ CARTES = F
+ NX = 1
+ XULAST =1.
+ ************************************************************
+  Group 4. Y-Direction Grid Spacing
+ NY = 21
+ YVLAST =0.05
+ YFRAC(1)=0.055894 ;YFRAC(5)=0.271842
+ YFRAC(9)=0.473719 ;YFRAC(13)=0.657714
+ YFRAC(17)=0.815985 ;YFRAC(21)=1.
+ ************************************************************
+  Group 5. Z-Direction Grid Spacing
+ PARAB = F
+ NZ = 1500
+ ZWLAST =5.
+ ZFRAC(1)=6.666667E-04 ;ZFRAC(301)=0.200667
+ ZFRAC(601)=0.400667 ;ZFRAC(901)=0.600667
+ ZFRAC(1201)=0.800667
+ ************************************************************
+  Group 6. Body-Fitted Coordinates
+ ************************************************************
+  Group 7. Variables: STOREd,SOLVEd,NAMEd
+ ONEPHS = T
+ NAME(1)=P1 ;NAME(5)=V1
+ NAME(7)=W1 ;NAME(12)=KE
+ NAME(13)=EP ;NAME(143)=DWDZ
+ NAME(144)=DWDY ;NAME(145)=YPLS
+ NAME(146)=STRS ;NAME(147)=EPKE
+ NAME(148)=DEN1 ;NAME(149)=EL1
+ NAME(150)=ENUT
+    * Y in SOLUTN argument list denotes:
+    * 1-stored 2-solved 3-whole-field
+    * 4-point-by-point 5-explicit 6-harmonic averaging 
+ SOLUTN(P1,Y,Y,Y,N,N,Y)
+ SOLUTN(V1,Y,Y,Y,N,N,Y)
+ SOLUTN(W1,Y,Y,Y,N,N,N)
+ SOLUTN(KE,Y,Y,N,N,N,N)
+ SOLUTN(EP,Y,Y,N,N,N,N)
+ SOLUTN(DWDZ,Y,N,N,N,N,Y)
+ SOLUTN(DWDY,Y,N,N,N,N,Y)
+ SOLUTN(YPLS,Y,N,N,N,N,Y)
+ SOLUTN(STRS,Y,N,N,N,N,Y)
+ SOLUTN(EPKE,Y,N,N,N,N,Y)
+ SOLUTN(DEN1,Y,N,N,N,N,Y)
+ SOLUTN(EL1,Y,N,N,N,N,Y)
+ SOLUTN(ENUT,Y,N,N,N,N,Y)
+ DEN1 = 148
+ VIST = 150
+ LEN1 = 149
+ ************************************************************
+  Group 8. Terms & Devices
+    * Y in TERMS argument list denotes:
+    * 1-built-in source 2-convection 3-diffusion 4-transient
+    * 5-first phase variable 6-interphase transport         
+ TERMS(P1,Y,Y,Y,N,Y,N)
+ TERMS(V1,Y,Y,Y,N,Y,N)
+ TERMS(W1,Y,Y,Y,N,Y,N)
+ TERMS(KE,N,Y,Y,N,Y,N)
+ TERMS(EP,N,Y,Y,N,Y,N)
+ DIFCUT =0.5 ;ZDIFAC =1.
+ GALA = F ;ADDDIF = T
+ NEWENT = T
+ ISOLX = 0 ;ISOLY = -1 ;ISOLZ = -1
+ ************************************************************
+  Group 9. Properties used if PRPS is not
+  stored, and where PRPS = -1.0 if it is!
+ RHO1 =998.23 ;TMP1 =0. ;EL1 = GRND4
+ TSURR =0. ;TEMP0 =273.15 ;PRESS0 =1.01325E+05
+ DVO1DT =3.41E-03 ;DRH1DP =0.
+ EMISS =0. ;SCATT =0.
+ RADIA =0. ;RADIB =0.
+ EL1A =0. ;EL1B =0. ;EL1C =0.
+ ENUL =1.0E-06 ;ENUT = GRND3
+ ENUTA =0. ;ENUTB =0. ;ENUTC =0.
+ IENUTA = 0
+ PRNDTL(V1)=1. ;PRNDTL(W1)=1.
+ PRNDTL(KE)=1. ;PRNDTL(EP)=1.
+ PRT(V1)=1. ;PRT(W1)=1.
+ PRT(KE)=1. ;PRT(EP)=1.314
+ CP1 =1005. ;CP2 =1.
+ ************************************************************
+  Group 10.Inter-Phase Transfer Processes
+ ************************************************************
+  Group 11.Initial field variables (PHIs)
+ FIINIT(P1)=0. ;FIINIT(V1)=1.0E-10
+ FIINIT(W1)=1.0E-10 ;FIINIT(KE)=5.625E-17
+ FIINIT(EP)=1.386463E-23 ;FIINIT(DWDZ)=1.0E-10
+ FIINIT(DWDY)=1.0E-10 ;FIINIT(YPLS)=1.0E-10
+ FIINIT(STRS)=1.0E-10 ;FIINIT(EPKE)=1.0E-10
+ FIINIT(DEN1)=998.23 ;FIINIT(EL1)=1.0E-10
+ FIINIT(ENUT)=1.0E-10
+   No PATCHes yet used for this Group
+ INIADD = F
+ FSWEEP = 1
+ NAMFI =CHAM
+ ************************************************************
+  Group 12. Patchwise adjustment of terms
+  Patches for this group are printed with those
+  for Group 13.
+  Their names begin either with GP12 or &
+ ************************************************************
+  Group 13. Boundary & Special Sources
+ 
+   Parent VR object for this patch is: INLE1         
+ PATCH(OB1 ,LOW , 1, 1, 1, 21, 1, 1, 1, 1)
+ COVAL(OB1 ,P1 , FIXFLU ,748.6725 )
+ COVAL(OB1 ,V1 ,0. ,0. )
+ COVAL(OB1 ,W1 ,0. ,0.75 )
+ COVAL(OB1 ,KE ,0. ,5.625E-17 )
+ COVAL(OB1 ,EP ,0. ,1.386463E-23 )
+ 
+   Parent VR object for this patch is: OUTL3         
+ PATCH(OB3 ,HIGH , 1, 1, 1, 21, 1500, 1500, 1, 1)
+ COVAL(OB3 ,P1 ,1000. ,0. )
+ COVAL(OB3 ,V1 ,0. , SAME )
+ COVAL(OB3 ,W1 ,0. , SAME )
+ COVAL(OB3 ,KE ,0. , SAME )
+ COVAL(OB3 ,EP ,0. , SAME )
+ 
+   Parent VR object for this patch is: PLAT2         
+ PATCH(OB2 ,NWALL , 1, 1, 21, 21, 1, 1500, 1, 1)
+ COVAL(OB2 ,W1 , GRND2 ,0. )
+ COVAL(OB2 ,KE , GRND2 , GRND2 )
+ COVAL(OB2 ,EP , GRND2 , GRND2 )
+ 
+ PATCH(KESOURCE,PHASEM, 1, 1, 1, 21, 1, 1500, 1, 1)
+ COVAL(KESOURCE,KE , GRND4 , GRND4 )
+ COVAL(KESOURCE,EP , GRND4 , GRND4 )
+ XCYCLE = F
+ EGWF = F
+ ************************************************************
+  Group 14. Downstream Pressure For PARAB
+ ************************************************************
+  Group 15. Terminate Sweeps
+ LSWEEP = 10000 ;ISWC1 = 1
+ LITHYD = 1 ;LITFLX = 1 ;LITC = 1 ;ITHC1 = 1
+ SELREF = T
+ RESFAC =1.0E-05
+ ************************************************************
+  Group 16. Terminate Iterations
+ LITER(P1)=200 ;LITER(V1)=10
+ LITER(W1)=10 ;LITER(KE)=20
+ LITER(EP)=20
+ ENDIT(P1)=1.0E-03 ;ENDIT(V1)=1.0E-03
+ ENDIT(W1)=1.0E-03 ;ENDIT(KE)=1.0E-03
+ ENDIT(EP)=1.0E-03
+ ************************************************************
+  Group 17. Relaxation
+ RELAX(P1,LINRLX,0.5)
+ RELAX(V1,LINRLX,0.5)
+ RELAX(W1,LINRLX,0.5)
+ RELAX(KE,LINRLX,0.5)
+ RELAX(EP,LINRLX,0.5)
+ RELAX(DWDZ,LINRLX,1.)
+ RELAX(DWDY,LINRLX,1.)
+ RELAX(YPLS,LINRLX,1.)
+ RELAX(STRS,LINRLX,1.)
+ RELAX(EPKE,LINRLX,1.)
+ RELAX(DEN1,LINRLX,0.5)
+ RELAX(EL1,LINRLX,1.)
+ RELAX(ENUT,LINRLX,0.5)
+ KELIN = 3
+ OVRRLX =0.
+ EXPERT = F ;NNORSL = F
+ ************************************************************
+  Group 18. Limits
+ VARMAX(P1)=1.0E+10 ;VARMIN(P1)=-1.0E+10
+ VARMAX(V1)=1.0E+06 ;VARMIN(V1)=-1.0E+06
+ VARMAX(W1)=1.0E+06 ;VARMIN(W1)=-1.0E+06
+ VARMAX(KE)=1.0E+10 ;VARMIN(KE)=1.0E-10
+ VARMAX(EP)=1.0E+10 ;VARMIN(EP)=1.0E-10
+ VARMAX(DWDZ)=1.0E+10 ;VARMIN(DWDZ)=-1.0E+10
+ VARMAX(DWDY)=1.0E+10 ;VARMIN(DWDY)=-1.0E+10
+ VARMAX(YPLS)=1.0E+10 ;VARMIN(YPLS)=-1.0E+10
+ VARMAX(STRS)=1.0E+10 ;VARMIN(STRS)=-1.0E+10
+ VARMAX(EPKE)=1.0E+10 ;VARMIN(EPKE)=1.0E-10
+ VARMAX(DEN1)=1.0E+10 ;VARMIN(DEN1)=1.0E-06
+ VARMAX(EL1)=1.0E+10 ;VARMIN(EL1)=1.0E-10
+ VARMAX(ENUT)=1.0E+10 ;VARMIN(ENUT)=1.0E-10
+ ************************************************************
+  Group 19. Data transmitted to GROUND
+ DWDY = T
+ DWDZ = T
+ GENK = T
+ PARSOL = F
+ CONWIZ = T
+ GEN1 = 681
+ ISG62 = 0
+ SPEDAT(SET,GXMONI,PLOTALL,L,T)
+ SPEDAT(SET,GXMONI,CLASSIC,L,T)
+ SPEDAT(SET,OBJNAM,^OB1,C,INLE1)
+ SPEDAT(SET,OBJTYP,^OB1,C,INLET)
+ SPEDAT(SET,OBJNAM,^OB2,C,PLAT2)
+ SPEDAT(SET,OBJTYP,^OB2,C,PLATE)
+ SPEDAT(SET,OBJNAM,^OB3,C,OUTL3)
+ SPEDAT(SET,OBJTYP,^OB3,C,OUTLET)
+ SPEDAT(SET,ARATIO,^OB3,R,1.)
+ SPEDAT(SET,OBJNAM,!OB4,C,NULL4)
+ SPEDAT(SET,OBJTYP,!OB4,C,NULL)
+ SPEDAT(SET,FACETDAT,NUMOBJ,I,4)
+ ************************************************************
+  Group 20. Preliminary Printout
+ ************************************************************
+  Group 21. Print-out of Variables
+ INIFLD = F ;SUBWGR = F
+    * Y in OUTPUT argument list denotes:
+    * 1-field 2-correction-eq. monitor 3-selective dumping      
+    * 4-whole-field residual 5-spot-value table 6-residual table
+ OUTPUT(P1,N,N,Y,Y,Y,Y)
+ OUTPUT(V1,N,N,Y,Y,Y,Y)
+ OUTPUT(W1,N,N,Y,Y,Y,Y)
+ OUTPUT(KE,N,N,Y,Y,Y,Y)
+ OUTPUT(EP,N,N,Y,Y,Y,Y)
+ OUTPUT(DWDZ,N,N,Y,N,N,N)
+ OUTPUT(DWDY,N,N,Y,N,N,N)
+ OUTPUT(YPLS,N,N,Y,N,N,N)
+ OUTPUT(STRS,N,N,Y,N,N,N)
+ OUTPUT(EPKE,N,N,Y,N,N,N)
+ OUTPUT(DEN1,N,N,Y,N,N,N)
+ OUTPUT(EL1,N,N,Y,N,N,N)
+ OUTPUT(ENUT,N,N,Y,N,N,N)
+ WALPRN = T
+ ************************************************************
+  Group 22. Monitor Print-Out
+ IXMON = 1 ;IYMON = 21 ;IZMON = 1500
+ NPRMON = 100000 ;NPRMNT = 1 ;TSTSWP = 10001
+ UWATCH = F ;USTEER = F
+ HIGHLO = F
+ ************************************************************
+  Group 23.Field Print-Out & Plot Control
+ NPRINT = 10000 ;NUMCLS = 5
+ NYPRIN = 4 ;IYPRF = 1 ;IYPRL = 21
+ NZPRIN = 300 ;IZPRF = 1 ;IZPRL = 10000
+ XZPR = F ;YZPR = T
+ IPLTF = 1 ;IPLTL = 10000 ;NPLT = 500
+ ISWPRF = 1 ;ISWPRL = 100000
+ ITABL = 3 ;IPROF = 1
+ ABSIZ =0.5 ;ORSIZ =0.4
+ NTZPRF = 1 ;NCOLPF = 50
+ ICHR = 2 ;NCOLCO = 45 ;NROWCO = 20
+   No PATCHes yet used for this Group
+ ************************************************************
+  Group 24. Dumps For Restarts
+ SAVE = T ;NOWIPE = F
+ NSAVE =CHAM
+ 
+ *** grid-geometry information ***
+ X-coordinates of the cell centres
+    5.000E-01
+ Y-coordinates of the cell centres
+    1.397E-03   1.227E-02   2.246E-02   3.179E-02   3.989E-02
+    4.750E-02
+ Z-coordinates of the cell centres
+    1.667E-03   1.002E+00   2.002E+00   3.002E+00   4.002E+00
+
+ 
+ X-coordinates of the (higher) cell faces
+    1.000E+00
+ Y-coordinates of the (higher) cell faces
+    2.795E-03   1.359E-02   2.369E-02   3.289E-02   4.080E-02
+    5.000E-02
+ Z-coordinates of the (higher) cell faces
+    3.333E-03   1.003E+00   2.003E+00   3.003E+00   4.003E+00
+
+ 
+ Total number of F-array elements used is                   1679474
+ --- INTEGRATION OF EQUATIONS BEGINS ---
+ 
+ ************************************************************
+ Run ending on sweep  3411 with all residuals below RESFAC ( 1.000000E-05)
+ ************************************************************
+ *** End of sweep 3412
+ ************************************************************
+ 
+ ************************************************************
+ Whole-field residuals before solution at sweep 3412
+ with resref values determined by EARTH
+ & resfac=1.0E-05
+  variable   resref  (res sum)/resref  (res sum)
+     P1     1.912E+00   1.627E-10      3.112E-10
+     V1     1.891E+00   1.706E-06      3.226E-06
+     W1     1.891E+00   9.802E-06      1.853E-05
+     KE     6.775E-02   5.116E-06      3.466E-07
+     EP     4.267E-01   1.798E-06      7.673E-07
+ 
+ max abs corrections for solved-for variables
+ for comparison with maximum & minimum values
+  variable   max-cor      high           low     (   IX    IY    IZ)
+     P1     3.622E-05   2.802E+02      5.925E-01 (    1,   21, 1413)
+     V1     4.983E-08   2.476E-04     -2.249E-03 (    1,   10, 1451)
+     W1     6.210E-07   9.276E-01      5.777E-01 (    1,    1, 1499)
+     KE     7.585E-09   6.668E-03      1.000E-10 (    1,   11, 1444)
+     EP     1.762E-08   8.729E-02      1.000E-10 (    1,   14, 1436)
+ 
+ 
+ ************************************************************
+ Sources and sinks
+ !! Zero nett sources are not printed !!!
+ 
+    Nett Sources have units of mass_per_unit_time * variable
+    Average values have units of the variable
+ 
+    Typically the units of the sources are:
+        U1,V1,W1 - Force  - Newtons
+        R1       - Mass   - kg/s
+        TEM1,H1  - Energy - Watts
+ 
+ Nett source of V1   at patch named: OB3      (OUTL3       ) =-1.331411E-04
+ pos. sum=0. neg. sum=-1.331411E-04
+ nett sum=-1.331411E-04
+ 
+ Nett source of W1   at patch named: OB1      (INLE1       ) = 7.018679E-01
+ Nett source of W1   at patch named: OB3      (OUTL3       ) =-7.125040E-01
+ Nett source of W1   at patch named: OB2      (PLAT2       ) =-3.362414E-01
+ pos. sum=0.701868 neg. sum=-1.048745
+ nett sum=-0.346878
+ 
+ Nett source of R1   at patch named: OB1      (INLE1       ) = 9.358238E-01
+ Nett source of R1   at patch named: OB3      (OUTL3       ) =-9.358238E-01 (Mass Out -9.358238E-01 In 0.000000E+00)
+ pos. sum=0.935824 neg. sum=-0.935824
+ nett sum=-7.327472E-15
+ 
+ Nett source of KE   at patch named: OB1      (INLE1       ) = 5.264009E-17 (Average  5.625000E-17)
+ Nett source of KE   at patch named: OB3      (OUTL3       ) =-2.853315E-03 (Ave Out  3.048988E-03 In  0.000000E+00)
+ Nett source of KE   at patch named: OB2      (PLAT2       ) =-3.911707E-16
+ Nett source of KE   at patch named: KESOURCE                =-3.228800E-02
+ Non-linearised source for KE    at: KESOURCE                = 3.202187E-02
+ pos. sum=0.032022 neg. sum=-0.035141
+ nett sum=-3.119438E-03
+ 
+ Nett source of EP   at patch named: OB1      (INLE1       ) = 1.297485E-23 (Average  1.386463E-23)
+ Nett source of EP   at patch named: OB3      (OUTL3       ) =-1.218759E-02 (Ave Out  1.302338E-02 In  0.000000E+00)
+ Nett source of EP   at patch named: OB2      (PLAT2       ) =-5.666499E-15
+ Nett source of EP   at patch named: KESOURCE                =-2.321060E-01
+ Non-linearised source for EP    at: KESOURCE                = 1.718818E-01
+ pos. sum=0.171882 neg. sum=-0.244294
+ nett sum=-0.072412
+ 
+ 
+ ************************************************************
+ Summary of sources from all Objects/Patches at sweep  3412
+    Variable      Inflow        Outflow       Nett
+       P1       9.358238E-01 -9.358238E-01 -7.327472E-15
+       V1       0.000000E+00 -1.331411E-04 -1.331411E-04
+       W1       7.018679E-01 -1.048745E+00 -3.468776E-01
+       KE       3.202187E-02 -3.514131E-02 -3.119438E-03
+       EP       1.718818E-01 -2.442936E-01 -7.241179E-02
+ ************************************************************
+ 
+ 
+ ************************************************************
+ spot values vs sweep or iteration number
+ IXMON= 1 IYMON= 21 IZMON= 1500 TIMESTEP= 1
+ 
+ Tabulation of abscissa and ordinates...
+   ISWP       P1           V1           W1           KE           EP  
+      1   0.0000E+00   0.0000E+00   0.0000E+00   1.0000E-10   1.0000E-10
+    501   5.9892E-01   0.0000E+00  -5.7947E-16   4.5233E-03   4.8783E-02
+   1001   5.8351E-01   0.0000E+00  -5.7947E-16   4.3227E-03   4.5556E-02
+   1501   5.8754E-01   0.0000E+00  -5.7947E-16   4.3748E-03   4.6379E-02
+   2001   5.9226E-01   0.0000E+00  -5.7947E-16   4.4361E-03   4.7360E-02
+   2501   5.9260E-01   0.0000E+00  -5.7947E-16   4.4406E-03   4.7433E-02
+   3001   5.9241E-01   0.0000E+00  -5.7947E-16   4.4382E-03   4.7394E-02
+   Variable    1 = P1     2 = V1     3 = W1     4 = KE     5 = EP  
+     Minval=  0.000E+00  0.000E+00 -5.795E-16  1.000E-10  1.000E-10
+     Maxval=  5.989E-01  0.000E+00  0.000E+00  4.523E-03  4.878E-02
+     Cellav=  5.067E-01  0.000E+00 -4.967E-16  3.791E-03  4.042E-02
+ 1.00 3....+..5.+....+....+....1....+..4.+....+.4..+....4
+      .                5       5       5        5       5
+ 0.90 +                                                 +
+      .                                                 .
+ 0.80 +                                                 +
+      .                                                 .
+ 0.70 +                                                 +
+      .                                                 .
+ 0.60 +                                                 +
+      .                                                 .
+ 0.50 +                                                 +
+      .                                                 .
+ 0.40 +                                                 +
+      .                                                 .
+ 0.30 +                                                 +
+      .                                                 .
+ 0.20 +                                                 +
+      .                                                 .
+ 0.10 +                                                 +
+      .                                                 .
+ 0.00 5....+..3.+....+.3..+....3....+..3.+....+.3..+....3
+      0   .1   .2   .3   .4   .5   .6   .7   .8   .9  1.0
+ the abscissa is      ISWP.  min= 1.00E+00 max= 3.00E+03
+ 
+ ************************************************************
+ 
+ ************************************************************
+ residuals vs sweep or iteration number
+ 
+ Tabulation of abscissa and ordinates...
+   ISWP       P1           V1           W1           KE           EP  
+      1   1.1000E+00   8.6618E-11   3.8952E-01   5.2855E-10   9.5096E-10
+    501   1.0975E-07   3.8042E-04   1.1377E-01   1.1483E-01   4.1042E-02
+   1001   2.5928E-08   2.2837E-04   2.7043E-02   5.2024E-02   1.2821E-02
+   1501   1.3654E-08   1.6210E-04   7.9427E-03   1.8335E-02   3.7037E-03
+   2001   7.5073E-09   6.3805E-05   3.5161E-03   3.0217E-03   1.1262E-03
+   2501   1.2680E-09   2.5547E-05   6.1485E-04   8.6447E-04   2.7143E-04
+   3001   3.5294E-10   6.9680E-06   1.0308E-04   7.9300E-05   2.7731E-05
+   Variable    1 = P1     2 = V1     3 = W1     4 = KE     5 = EP  
+     Minval= -2.176E+01 -2.317E+01 -9.180E+00 -2.136E+01 -2.077E+01
+     Maxval=  9.531E-02 -7.874E+00 -9.428E-01 -2.164E+00 -3.193E+00
+ 1.00 3....+..5.+....+....+....+....+....+....+....+....+
+      .                5       2                        .
+ 0.90 +                        4       2                +
+      .       3                5                        .
+ 0.80 +                                5        2       +
+      .                                         4       2
+ 0.70 +                3                        5       +
+      .                                                 .
+ 0.60 +                                                 5
+      .                        3                        .
+ 0.50 +                                                 +
+      .                                3                .
+ 0.40 +                                                 +
+      .                                                 .
+ 0.30 +                                                 +
+      .       1                                         .
+ 0.20 +                1                        3       +
+      .                        1       1                .
+ 0.10 +                                                 +
+      .                                         1       .
+ 0.00 5....+....+....+....+....+....+....+....+....+....3
+      0   .1   .2   .3   .4   .5   .6   .7   .8   .9  1.0
+ the abscissa is      ISWP.  min= 1.00E+00 max= 3.00E+03
+ 
+ ************************************************************
+ 
+ ************************************************************
+  Patch-wise Printout from GXYPLS
+Variable= Sk.Fr.Co, at patch named: OB2      and  IX=     1
+ IY=    21  3.562E-03  3.796E-03  3.806E-03  3.792E-03  3.782E-03
+ IZ=          1        301        601        901       1201
+ 
+ ************************************************************
+ 
+ 
+ ************************************************************
+ SATLIT RUN NUMBER =   1 ; LIBRARY REF.=    0
+ Run started at 18:47:30 on Thursday, 10 July 2025                             
+ Run completed at 19:05:18 on Thursday, 10 July 2025                           
+ CPU time of run 1069 s
+ This includes 1069 seconds of user time and 0 seconds of system time.
+ TIME/(VARIABLES*CELLS*TSTEPS*SWEEPS*ITS) = 1.989E-06
+ ************************************************************

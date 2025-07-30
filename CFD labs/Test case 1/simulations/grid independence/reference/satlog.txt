@@ -1,0 +1,16 @@
+>    ----------------------------------------------------------
+>    PHOENICS 2022 v1.0 - SATELLITE
+>    (C) Copyright 2022
+>    Concentration Heat and Momentum Limited
+>    All rights reserved.
+>    Address:  Bakery House, 40 High Street
+>    Wimbledon, London, SW19 5AU, England
+>    tel:       +44 (0) 20-8947-7651
+>    fax:       +44 (0) 20-8879-3497
+>    e-mail:    phoenics@cham.co.uk
+>    web:       www.cham.co.uk
+>    ----------------------------------------------------------
+>    Code expiry date is the end  : jul 2025
+>    ----------------------------------------------------------
+>    Running with 64-bit Single Precision executable
+>    Working directory: C:\Users\marta\OneDrive - Politecnico di Milano\AAAUNI\MAGISTRALE\PRIMO ANNO\FLUID LABS\Lab_tests\CFD1\2ndattempt\simulations\grid independence\reference

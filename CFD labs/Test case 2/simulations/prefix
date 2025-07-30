@@ -1,0 +1,79 @@
+*<html><body><pre><strong>
+
+* ---------- PREFIX file for PHOENICS version 2022
+*
+* Set DBGFIL equal to T to switch on debug of file access.
+DBGFIL=F
+*
+* DBGPGI = T activates debug of PHOENICS graphics interface & drivers
+DBGPGI=F
+*
+* Select screen and plotter modes
+VDUNAM=VGAMOUSE
+PLTNAM=HPGL-OFL
+*
+* The following files are supplied in d_"programs" for each program:
+* SATCON, EARCON, PHOCON, AUTCON and PINCON.
+* Users may modify any file after by copying it into d_priv1 or d_priv2.
+* If a private CONFIG file is to be used, the "*" should be removed from
+* the appropriate following setting
+*
+*SATCON=satcon
+*EARCON=earcon
+*PHOCON=phocon
+*AUTCON=autcon
+*PINCON=pincon
+*
+* PHIDA = T selects the direct-access field-dump file option.
+* PHIDA = F selects the formatted, sequential file option
+PHIDA=F
+*
+* XYZDA = T selects the direct-access grid-file option.
+* XYZDA = F selects the formatted sequential file option.
+XYZDA=F
+*
+* Set IPRE equal to T to cause  PHOTON to use the
+* CONFIG-supplied names of the grid file (XYZ or
+* XYZDA) and restart file (PHI or PHIDA) names. Set
+* it equal to F to cause PHOTON to request user-
+* supplied names
+IPRE=F
+*
+* Set LPHI equal to T if the EARTH restart file
+* (PHI or PHIDA)is to be used when IPRE=T.
+LPHI=T
+*
+* Set LXYZ equal to T if a grid file (XYZ or XYZDA)
+* is to be used when IPRE=T
+LXYZ=T
+*
+* Flag to signal use of PHOENICS Version 1.3 style restart (DF09) file.
+DF09US=F
+*
+* NPLOT sets the number of PLOT files for AUTOPLOT if IPRE=T.
+NPLOT=1
+* NTABLE sets the number of TABLE files for AUTOPLOT if IPRE=T.
+NTABLE=1
+* NPHIDA sets the number of PHIDA files for AUTOPLOT if IPRE=T.
+NPHIDA=1
+* NXYZDA sets the number of XYZDA files for AUTOPLOT if IPRE=T.
+* XYZDA files which are needed for PHIDAs should not be counted.
+NXYZDA=1
+* NPHI sets the number of PHI files for AUTOPLOT if IPRE=T.
+NPHI=1
+* NXYZ sets the number of XYZ files for AUTOPLOT if IPRE=T.
+* XYZ files which are needed for PHIs should not be counted.
+NXYZ=1
+* NDF09 sets the number of DF09 files for AUTOPLOT if IPRE=T.
+NDF09=1
+* NDF12 sets the number of DF12 files for AUTOPLOT if IPRE=T.
+* DF12 files which are needed for DF09s should not be counted.
+NDF12=1
+*
+* ---------------- INSTALLATION USE ONLY -------------------------
+* The full path-names of the PHOENICS 2022 CONFIG and COLDAT files are:
+CONFIG=\phoenics\d_allpro\config
+COLDAT=\phoenics\d_allpro\coldat
+*
+END
+*</strong></pre></body></html>

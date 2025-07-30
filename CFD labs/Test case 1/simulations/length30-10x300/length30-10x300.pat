@@ -1,0 +1,7 @@
+ GR OU X 1; GR OU X M; GR OU Y 1; GR OU Y M
+ * OB1     
+ GR OU     Z     1 X     1     1 Y     1    15 COL     2
+ * OB2     
+ GR OU     Z   451 X     1     1 Y     1    15 COL     3
+ * OB3     
+ GR OU     Y    16 X     1     1 Z     1   450 COL     4

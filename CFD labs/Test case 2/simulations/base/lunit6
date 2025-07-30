@@ -1,0 +1,30 @@
+ After mpi_comm_size, nproc,myid=                     1                     0
+ after readenv par= F whf= F mlres= T  myid=                     0
+ mulresult= T  I am                     0
+ PVM3IN=           0
+Allocating F( 10000000) for Earth                                   
+Allocating LWORK( 501) for Earth                                                
+Allocating NAMPAT( 5) for Earth                                                 
+Allocating OBJNAM( 5) for Earth                                                 
+Allocating SPEDAT( 12) for Earth                                                
+LWORK memory released                                                           
+FGV arrays allocated                                                            
+ Initial estimated storage requirement is                  10000000
+Allocating OBJECT arrays for Earth                                              
+Allocating OBJNOS ( 1)                                                          
+ Number of F-array locations available is                  10000000
+ Number used before BFC allowance is                        1667357
+ Number used after BFC allowance is                         1667357
+ Total number of F-array elements used is                   1679474
+Allocating GXMONI arrays ( 50025) for Earth                                     
+ Run                      1   ended. Libref=                      0
+Allocating LWORK( 151) for Earth                                                
+ time to write phi/phida                     45  ms
+LWORK memory released                                                           
+F released                                                                      
+OBJECT memory released                                                          
+FGV memory released                                                             
+NAMPAT memory released                                                          
+OBJNAM memory released                                                          
+SPEDAT memory released                                                          
+GXMONI array memory released                                                    
