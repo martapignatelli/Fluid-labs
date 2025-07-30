@@ -2,9 +2,11 @@
 Laboratories carried out within the course of Fluid Labs at Politecnico di Milano.
 
 ## Computational Fluid Dynamics Labs
+These labs consists of simulations with PHOENICS software and analysis of the results through MATLAB.
 1. Laminar oil transport in a pipe
 2. Turbulent water transport in a pipe
 ## Experimental Labs
+For these labs, we were given experimental data, which we analyzed in MATLAB.
 3. Calibration of a load cell
 4. Analysis of the velocity field in the wake of a circular cylinder (experimental data from PSV)
 5. Analysis of the hydrodynamic forces acting on a cylinder in steady free surface flow
